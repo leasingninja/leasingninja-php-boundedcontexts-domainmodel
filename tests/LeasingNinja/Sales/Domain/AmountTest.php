@@ -20,7 +20,9 @@ class AmountTest extends TestCase
         $areEqual = amount1.equals(amount2);
 
         // then
-        assertThat(areEqual).isTrue();
+        $this->assertTrue($areEqual);
+        //$this->assertEquals(true, $areEqual);
+        //$this->assertThat($areEqual, $this->equalTo(true));
     }
 
     public function givenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
@@ -36,7 +38,7 @@ class AmountTest extends TestCase
         $areEqual = amount1.equals(amount2);
 
         // then
-        assertThat(areEqual).isFalse();
+        $this->assertFalse($areEqual);
     }
 
 }
