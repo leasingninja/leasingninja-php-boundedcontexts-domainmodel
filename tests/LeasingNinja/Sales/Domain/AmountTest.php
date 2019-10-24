@@ -23,4 +23,20 @@ class AmountTest extends TestCase
         assertThat(areEqual).isTrue();
     }
 
+    public function givenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
+    {
+        // given
+        /** @var Amount $amount1 */
+        $amount1 = Amount::of(100, "EUR");
+        /** @var Amount $amount2 */
+        $amount2 = Amount::of(200, "EUR");
+
+        // when
+        /** @var bool $areEqual */
+        $areEqual = amount1.equals(amount2);
+
+        // then
+        assertThat(areEqual).isFalse();
+    }
+
 }
