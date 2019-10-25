@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class AmountTest extends TestCase
 {
-    public function givenTwoEqualAmounts_whenEquals_thenAreEqual(): void
+    public function testGivenTwoEqualAmounts_whenEquals_thenAreEqual(): void
     {
         // given
         /** @var Amount $amount1 */
@@ -17,15 +17,15 @@ class AmountTest extends TestCase
 
         // when
         /** @var bool $areEqual */
-        $areEqual = amount1.equals(amount2);
+        $areEqual = $amount1->equals($amount2);
 
         // then
         $this->assertTrue($areEqual);
         //$this->assertEquals(true, $areEqual);
-        //$this->assertThat($areEqual, $this->equalTo(true));
+        //$this->assertThat($areEqual, $this->isTrue());
     }
 
-    public function givenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
+    public function testGivenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
     {
         // given
         /** @var Amount $amount1 */
@@ -35,7 +35,7 @@ class AmountTest extends TestCase
 
         // when
         /** @var bool $areEqual */
-        $areEqual = amount1.equals(amount2);
+        $areEqual = $amount1->equals($amount2);
 
         // then
         $this->assertFalse($areEqual);
