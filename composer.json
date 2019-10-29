@@ -1,10 +1,21 @@
 {
+  "name": "leasingninja/leasingninja",
+  "description": "The DDD demonstration app",
+  "minimum-stability": "stable",
+  "homepage": "https://leasingninja.io/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Henning Schwentner",
+      "email": "hs@wps.de"
+    }
+  ],
   "autoload": {
-    "classmap": [
-      "src/"
-    ]
+    "psr-4": { "": "src/" }
   },
   "require-dev": {
-    "phpunit/phpunit": "^8"
+  },
+  "require": {
+    "phpunit/phpunit": "8.4.1"
   }
 }
