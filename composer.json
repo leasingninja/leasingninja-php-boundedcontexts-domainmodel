@@ -10,8 +10,15 @@
       "email": "hs@wps.de"
     }
   ],
+  "autoload-dev": {
+    "psr-4": {
+      "": "tests/"
+    }
+  },
   "autoload": {
-    "psr-4": { "": "src/" }
+    "psr-4": {
+      "": "src/"
+    }
   },
   "require-dev": {
   },
