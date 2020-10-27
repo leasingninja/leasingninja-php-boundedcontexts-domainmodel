@@ -13,6 +13,6 @@ class ContractNumberTest extends TestCase
         // when
 
         // then
-        $this->assertThat($nr->value(), isEqualTo("4711"));
+        $this->assertThat($nr->value(), $this->equalTo("4711"));
     }
 }

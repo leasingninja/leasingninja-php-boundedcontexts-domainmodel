@@ -10,8 +10,6 @@ class ContractTest extends TestCase
     public function test_givenANewContract_whenSign_thenContractIsSigned(): void
     {
         // given
-        $nr = Amount::of(4711, "EUR");
-        $nr = ContractNumber::of("4711");
         $contract = new Contract(ContractNumber::of("4711"), Customer::of("John Buyer"),
 				Car::of("Mercedes Benz C-Class"), Amount::of(20000, "EUR"));
 
@@ -19,8 +17,7 @@ class ContractTest extends TestCase
 		$contract->sign(SignDate::of(2018, 12, 24));
 
 		// then
-        $this->assertEquals();
-		assertThat($contract->isSigned())->isEqualTo(true);
+        $this->assertThat($contract->isSigned(), $this->equalTo(true));
 		// check that event ContractSigned is fired
 	}
 
