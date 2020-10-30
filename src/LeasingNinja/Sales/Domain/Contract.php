@@ -12,8 +12,12 @@ class Contract
 	private /*final*/ Amount $price;
 	private SignDate $signDate;
 
-    public function __construct(ContractNumber $number, Customer $customer, Car $car, Amount $amount)
+    public function __construct(ContractNumber $number, Customer $lessee, Car $car, Amount $price)
     {
+        // $this->number = $number;
+        $this->lessee = $lessee;
+        $this->car = $car;
+        $this->price = $price;
     }
 
     public function sign(SignDate $date) {
