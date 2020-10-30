@@ -5,8 +5,8 @@ namespace LeasingNinja\Sales\Domain;
 
 class Amount
 {
-    private /*int*/ $amount;
-	private /*string*/ $currency;
+    private int $amount;
+	private string $currency;
 
 	private function __construct(int $amount, string $currency)
     {
