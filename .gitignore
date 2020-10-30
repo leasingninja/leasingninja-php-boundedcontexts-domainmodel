@@ -11,3 +11,6 @@ composer.phar
 *.iws
 *.iml
 *.ipr
+
+#PHPUnit
+.phpunit.result.cache
