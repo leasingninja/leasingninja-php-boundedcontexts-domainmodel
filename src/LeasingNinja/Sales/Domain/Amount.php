@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace LeasingNinja\Sales\Domain;
 
+use PHPMolecules\DDD\Attribute\ValueObject;
+
+#[ValueObject]
 class Amount
 {
     private int $amount;
