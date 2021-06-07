@@ -6,14 +6,14 @@ namespace DDDBits\Basetype;
 
 abstract class TinyType
 {
-    private $value;
+    private int|float|string|object $value;
 
-	protected function __construct($value)
+	protected function __construct(int|float|string|object $value)
     {
 		$this->value = $value;
 	}
 
-    public function value()
+    public function value(): int|float|string|object
     {
 		return $this->value;
 	}
