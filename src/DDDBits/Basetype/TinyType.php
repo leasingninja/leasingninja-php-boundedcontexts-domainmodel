@@ -20,7 +20,7 @@ abstract class TinyType
 
 	public function __toString(): string
     {
-		return TinyType::class + " [" + value() + "]";
+		return TinyType::class + " [" + $this->value() + "]";
 	}
 
 	public function equals(TinyType $other): bool
