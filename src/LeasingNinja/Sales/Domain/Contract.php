@@ -21,16 +21,15 @@ class Contract
     }
 
     public function sign(SignDate $date) {
-		//assert date != null;
-		//if(!$this->isSigned())
-		//    bla();
-
+		assert($date != null);
+		assert(!$this->isSigned());
+	
 		$this->signDate = $date;
 
-		//assert isSigned();
+		assert($this->isSigned());
 	}
 
     public function isSigned(): bool {
-		return $this->signDate != null;
+		return isset($this->signDate);
 	}
 }
