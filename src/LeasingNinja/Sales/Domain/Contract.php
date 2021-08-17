@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace LeasingNinja\Sales\Domain;
 
+use PHPMolecules\DDD\Attribute\Entity;
 
+#[Entity]
 class Contract
 {
     private /*final*/ Customer $lessee;

@@ -3,7 +3,9 @@
 
 namespace LeasingNinja\Sales\Domain;
 
+use PHPMolecules\DDD\Attribute\Repository;
 
+#[Repository]
 interface Contracts
 {
 

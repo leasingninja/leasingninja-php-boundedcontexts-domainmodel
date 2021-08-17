@@ -6,7 +6,9 @@ namespace LeasingNinja\Sales\Domain;
 
 use DateTimeImmutable;
 use DDDBits\Basetype\TinyType;
+use PHPMolecules\DDD\Attribute\ValueObject;
 
+#[ValueObject]
 class SignDate extends TinyType
 {
 
