@@ -11,6 +11,6 @@ interface Contracts
 
     function with(ContractNumber $number): Contract;
 
-    function save(Contract $contract);
+    function save(Contract $contract): void;
 
 }
