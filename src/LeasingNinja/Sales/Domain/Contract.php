@@ -6,8 +6,11 @@ namespace LeasingNinja\Sales\Domain;
 
 use PHPMolecules\DDD\Attribute\Entity;
 
+/**
+ * @extends \DDDBits\Basetype\Entity<ContractNumber>
+ */
 #[Entity]
-class Contract
+class Contract extends \DDDBits\Basetype\Entity
 {
     private /*final*/ Customer $lessee;
 	private /*final*/ Car $car;
@@ -16,7 +19,7 @@ class Contract
 
     public function __construct(ContractNumber $number, Customer $lessee, Car $car, Amount $price)
     {
-        // $this->number = $number;
+        parent::__construct($number);
         $this->lessee = $lessee;
         $this->car = $car;
         $this->price = $price;

@@ -8,6 +8,9 @@ use DateTimeImmutable;
 use DDDBits\Basetype\TinyType;
 use PHPMolecules\DDD\Attribute\ValueObject;
 
+/**
+ * @extends TinyType<DateTimeImmutable>
+ */
 #[ValueObject]
 class SignDate extends TinyType
 {

@@ -7,6 +7,9 @@ namespace LeasingNinja\Sales\Domain;
 use DDDBits\Basetype\TinyType;
 use PHPMolecules\DDD\Attribute\ValueObject;
 
+/**
+ * @extends TinyType<string>
+ */
 #[ValueObject]
 class ContractNumber extends TinyType
 {
