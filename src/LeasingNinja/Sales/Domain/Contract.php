@@ -22,7 +22,7 @@ class Contract
         $this->price = $price;
     }
 
-    public function sign(SignDate $date) {
+    public function sign(SignDate $date): void {
 		assert($date != null);
 		assert(!$this->isSigned());
 	
