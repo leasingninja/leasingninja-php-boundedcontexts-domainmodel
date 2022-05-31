@@ -41,6 +41,6 @@ class Amount
 
     public function __toString(): string
     {
-		return "Amount [" + $this->currency + " "  + $this->amount + "]";
+		return "Amount [" . $this->currency . " "  . $this->amount . "]";
 	}
 }
