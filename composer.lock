@@ -4,27 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbd9e4da477f12bfb0fbb2221efe14c6",
+    "content-hash": "555cec34caca892c95a294060fcb523e",
     "packages": [
         {
             "name": "xmolecules/phpmolecules",
-            "version": "v0.0.1",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmolecules/phpmolecules.git",
-                "reference": "a9188a8a41656cf617f088f118da84aaab428caa"
+                "reference": "5431de35ceb5598fe6798db1f69dacf921afad99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmolecules/phpmolecules/zipball/a9188a8a41656cf617f088f118da84aaab428caa",
-                "reference": "a9188a8a41656cf617f088f118da84aaab428caa",
+                "url": "https://api.github.com/repos/xmolecules/phpmolecules/zipball/5431de35ceb5598fe6798db1f69dacf921afad99",
+                "reference": "5431de35ceb5598fe6798db1f69dacf921afad99",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.12.86",
+                "phpstan/phpstan": "^1.7",
                 "phpunit/phpunit": "^9.5",
                 "squizlabs/php_codesniffer": "^3.6"
             },
@@ -49,9 +49,9 @@
             "homepage": "https://xmolecules.org/",
             "support": {
                 "issues": "https://github.com/xmolecules/phpmolecules/issues",
-                "source": "https://github.com/xmolecules/phpmolecules/tree/v0.0.1"
+                "source": "https://github.com/xmolecules/phpmolecules/tree/v0.2.0"
             },
-            "time": "2021-05-11T16:13:10+00:00"
+            "time": "2022-05-31T17:19:46+00:00"
         }
     ],
     "packages-dev": [
