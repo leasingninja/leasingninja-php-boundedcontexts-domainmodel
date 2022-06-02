@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LeasingNinja\Sales\Domain;
 
 use PHPMolecules\DDD\Attribute\Entity;
+use PHPMolecules\DDD\Attribute\Identity;
 
 /**
  * @extends \DDDBits\Basetype\Entity<ContractNumber>
@@ -23,6 +24,12 @@ class Contract extends \DDDBits\Basetype\Entity
         $this->lessee = $lessee;
         $this->car = $car;
         $this->price = $price;
+    }
+
+    #[Identity]
+    public function iban(): ContractNumber
+    {
+        return parent::identity();
     }
 
     public function sign(SignDate $date): void {
