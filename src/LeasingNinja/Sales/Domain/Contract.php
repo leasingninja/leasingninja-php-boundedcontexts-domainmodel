@@ -27,10 +27,25 @@ class Contract extends \DDDBits\Basetype\Entity
     }
 
     #[Identity]
-    public function iban(): ContractNumber
+    public function number(): ContractNumber
     {
         return parent::identity();
     }
+
+	public function lessee(): Customer
+    {
+		return $this->lessee;
+	}
+	
+	public function car(): Car
+    {
+		return $this->car;
+	}
+	
+	public function price(): Amount
+    {
+		return $this->price;
+	}
 
     public function sign(SignDate $date): void {
 		assert($date != null);
