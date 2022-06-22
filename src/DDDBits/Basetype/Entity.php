@@ -5,14 +5,14 @@ namespace DDDBits\Basetype;
 
 
 /**
- * @template ID of object
+ * @template ID of int|float|string|object
  */
 abstract class Entity
 {
     /**
 	 * @var ID
 	 */
-	private /*final*/ $identity;
+	public readonly int|float|string|object $identity;
 
 	/**
  	 * @param ID $identity
@@ -24,17 +24,9 @@ abstract class Entity
         $this->identity = $identity;
     }
 
-	/**
-	 * @return ID
-	 */
-    public final function identity()
-	{
-		return $this->identity;
-	}
-
 	public function __toString(): string
 	{
-		return __CLASS__ . " [id=" . $this->identity() . "]";
+		return __CLASS__ . " [id=" . $this->identity . "]";
 	}
 
 	/**
@@ -42,7 +34,7 @@ abstract class Entity
  	 */
 	public final function equals($other): bool
 	{
-		return $this->identity() === $other->identity();
+		return $this->identity === $other->identity;
 	}
 
 }

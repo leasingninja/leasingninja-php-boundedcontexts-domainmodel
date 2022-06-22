@@ -29,7 +29,7 @@ class Contract extends \DDDBits\Basetype\Entity
     #[Identity]
     public function number(): ContractNumber
     {
-        return parent::identity();
+        return parent::identity;
     }
 
     public function sign(SignDate $date): void
