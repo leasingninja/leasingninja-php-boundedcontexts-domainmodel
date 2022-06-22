@@ -14,7 +14,8 @@ use PHPMolecules\DDD\Attribute\ValueObject;
 class Car extends TinyType
 {
 
-    public static function of(string $model): Car {
+    public static function of(string $model): Car
+    {
         return new Car($model);
     }
 

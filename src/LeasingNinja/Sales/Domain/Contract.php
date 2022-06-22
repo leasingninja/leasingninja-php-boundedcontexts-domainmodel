@@ -32,7 +32,8 @@ class Contract extends \DDDBits\Basetype\Entity
         return parent::identity();
     }
 
-    public function sign(SignDate $date): void {
+    public function sign(SignDate $date): void
+	{
 		assert($date != null);
 		assert(!$this->isSigned());
 	
@@ -41,7 +42,8 @@ class Contract extends \DDDBits\Basetype\Entity
 		assert($this->isSigned());
 	}
 
-    public function isSigned(): bool {
+    public function isSigned(): bool
+	{
 		return isset($this->signDate);
 	}
 }
