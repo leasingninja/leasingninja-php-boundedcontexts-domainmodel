@@ -8,8 +8,8 @@ use PHPMolecules\DDD\Attribute\ValueObject;
 #[ValueObject]
 class Amount
 {
-    private int $amount;
-	private string $currency;
+    public readonly int $amount;
+	public readonly string $currency;
 
 	private function __construct(int $amount, string $currency)
     {
@@ -22,15 +22,6 @@ class Amount
         assert($currency != null);
 
 		return new Amount($amount, $currency);
-	}
-
-    public function amount(): int
-    {
-		return $this->amount;
-	}
-
-    public function currency(): string {
-		return $this->currency;
 	}
 
     public function equals(Amount $other): bool
