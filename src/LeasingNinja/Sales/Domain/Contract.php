@@ -13,9 +13,9 @@ use PHPMolecules\DDD\Attribute\Identity;
 #[Entity]
 class Contract extends \DDDBits\Basetype\Entity
 {
-    private /*final*/ Customer $lessee;
-	private /*final*/ Car $car;
-	private /*final*/ Amount $price;
+    public readonly Customer $lessee;
+	public readonly Car $car;
+	public readonly Amount $price;
 	private SignDate $signDate;
 
     public function __construct(ContractNumber $number, Customer $lessee, Car $car, Amount $price)
@@ -31,21 +31,6 @@ class Contract extends \DDDBits\Basetype\Entity
     {
         return parent::identity();
     }
-
-	public function lessee(): Customer
-    {
-		return $this->lessee;
-	}
-	
-	public function car(): Car
-    {
-		return $this->car;
-	}
-	
-	public function price(): Amount
-    {
-		return $this->price;
-	}
 
     public function sign(SignDate $date): void {
 		assert($date != null);

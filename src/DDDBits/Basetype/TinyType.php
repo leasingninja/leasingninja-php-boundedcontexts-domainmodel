@@ -12,7 +12,7 @@ abstract class TinyType
 	/**
 	 * @var V
 	 */
-    private $value;
+    public readonly int|float|string|object $value;
 
 	/**
 	 * @param V $value
@@ -22,17 +22,9 @@ abstract class TinyType
 		$this->value = $value;
 	}
 
-	/**
-	 * @return V
-	 */
-    public function value()
-    {
-		return $this->value;
-	}
-
 	public function __toString(): string
     {
-		return TinyType::class . " [" . $this->value() . "]";
+		return TinyType::class . " [" . $this->value . "]";
 	}
 
 	/**
