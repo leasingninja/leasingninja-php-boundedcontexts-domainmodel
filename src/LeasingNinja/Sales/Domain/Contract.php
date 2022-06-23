@@ -1,6 +1,6 @@
 <?php
-declare(strict_types=1);
 
+declare(strict_types=1);
 
 namespace LeasingNinja\Sales\Domain;
 
@@ -14,9 +14,9 @@ use PHPMolecules\DDD\Attribute\Identity;
 class Contract extends \DDDBits\Basetype\Entity
 {
     public readonly Customer $lessee;
-	public readonly Car $car;
-	public readonly Amount $price;
-	private SignDate $signDate;
+    public readonly Car $car;
+    public readonly Amount $price;
+    private SignDate $signDate;
 
     public function __construct(ContractNumber $number, Customer $lessee, Car $car, Amount $price)
     {
@@ -33,17 +33,17 @@ class Contract extends \DDDBits\Basetype\Entity
     }
 
     public function sign(SignDate $date): void
-	{
-		assert($date != null);
-		assert(!$this->isSigned());
-	
-		$this->signDate = $date;
+    {
+        assert($date != null);
+        assert(!$this->isSigned());
 
-		assert($this->isSigned());
-	}
+        $this->signDate = $date;
+
+        assert($this->isSigned());
+    }
 
     public function isSigned(): bool
-	{
-		return isset($this->signDate);
-	}
+    {
+        return isset($this->signDate);
+    }
 }

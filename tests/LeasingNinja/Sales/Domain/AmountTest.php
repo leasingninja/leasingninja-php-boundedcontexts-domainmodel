@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace LeasingNinja\Sales\Domain;
@@ -34,5 +35,4 @@ class AmountTest extends TestCase
         // then
         $this->assertFalse($areEqual);
     }
-
 }

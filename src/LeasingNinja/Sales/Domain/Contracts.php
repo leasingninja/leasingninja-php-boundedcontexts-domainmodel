@@ -1,6 +1,5 @@
 <?php
 
-
 namespace LeasingNinja\Sales\Domain;
 
 use PHPMolecules\DDD\Attribute\Repository;
@@ -8,9 +7,7 @@ use PHPMolecules\DDD\Attribute\Repository;
 #[Repository]
 interface Contracts
 {
+    public function with(ContractNumber $number): Contract;
 
-    function with(ContractNumber $number): Contract;
-
-    function save(Contract $contract): void;
-
+    public function save(Contract $contract): void;
 }
