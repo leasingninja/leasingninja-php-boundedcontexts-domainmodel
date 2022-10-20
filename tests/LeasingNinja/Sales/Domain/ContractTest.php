@@ -6,9 +6,9 @@ namespace LeasingNinja\Sales\Domain;
 
 use PHPUnit\Framework\TestCase;
 
-class ContractTest extends TestCase
+final class ContractTest extends TestCase
 {
-    public function test_givenANewContract_whenSign_thenContractIsSigned(): void
+   public function test_givenANewContract_whenSign_thenContractIsSigned(): void
     {
         // given
         $contract = new Contract(
@@ -23,6 +23,7 @@ class ContractTest extends TestCase
 
         // then
         $this->assertThat($contract->isSigned(), $this->equalTo(true));
+        $this->assertThat($contract->signDate(), $this->equalTo(SignDate::of(2018, 12, 24)));
         // check that event ContractSigned is fired
     }
 }

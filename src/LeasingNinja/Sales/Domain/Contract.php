@@ -46,4 +46,10 @@ class Contract extends \DDDBits\Basetype\Entity
     {
         return isset($this->signDate);
     }
+
+	public function signDate(): SignDate {
+		assert($this->isSigned());
+
+		return $this->signDate;
+	}
 }
