@@ -10,15 +10,15 @@ use PHPMolecules\DDD\Attribute\ValueObject;
 class Amount
 {
     public readonly int $amount;
-    public readonly string $currency;
+    public readonly Currency $currency;
 
-    private function __construct(int $amount, string $currency)
+    private function __construct(int $amount, Currency $currency)
     {
         $this->amount = $amount;
         $this->currency = $currency;
     }
 
-    public static function of(int $amount, String $currency): Amount
+    public static function of(int $amount, Currency $currency): Amount
     {
         assert($currency != null);
 

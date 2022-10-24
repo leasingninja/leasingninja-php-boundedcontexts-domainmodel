@@ -11,8 +11,8 @@ class AmountTest extends TestCase
     public function testGivenTwoEqualAmounts_whenEquals_thenAreEqual(): void
     {
         // given
-        $amount1 = Amount::of(100, "EUR");
-        $amount2 = Amount::of(100, "EUR");
+        $amount1 = Amount::of(100, Currency::EUR);
+        $amount2 = Amount::of(100, Currency::EUR);
 
         // when
         $areEqual = $amount1->equals($amount2);
@@ -26,8 +26,8 @@ class AmountTest extends TestCase
     public function testGivenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
     {
         // given
-        $amount1 = Amount::of(100, "EUR");
-        $amount2 = Amount::of(200, "EUR");
+        $amount1 = Amount::of(100, Currency::EUR);
+        $amount2 = Amount::of(200, Currency::EUR);
 
         // when
         $areEqual = $amount1->equals($amount2);

@@ -8,14 +8,14 @@ use PHPUnit\Framework\TestCase;
 
 final class ContractTest extends TestCase
 {
-   public function test_givenANewContract_whenSign_thenContractIsSigned(): void
+    public function test_givenANewContract_whenSign_thenContractIsSigned(): void
     {
         // given
         $contract = new Contract(
             ContractNumber::of("4711"),
             Customer::of("John Buyer"),
             Car::of("Mercedes Benz C-Class"),
-            Amount::of(20000, "EUR")
+            Amount::of(20_000, Currency::EUR)
         );
 
         // when
