@@ -27,6 +27,7 @@ class Amount
 
     public function equals(Amount $other): bool
     {
+        // TODO: null safety
         return $this->amount === $other->amount
             && $this->currency === $other->currency;
     }
