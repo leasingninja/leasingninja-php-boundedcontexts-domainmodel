@@ -8,7 +8,32 @@ use PHPUnit\Framework\TestCase;
 
 final class ContractTest extends TestCase
 {
-    public function test_givenANewContract_whenSign_thenContractIsSigned(): void
+    //#[Test]
+    /**
+     * @Test
+     */
+    public function givenAFilledOutContract_whenCalculate_thenInstallmentIsX(): void
+    {
+        // given
+        $contract = new Contract(
+            ContractNumber::of("4711"),
+            Customer::of("John Buyer"),
+            Car::of("Volkswagen ID.3"),
+            Amount::of(40_000, Currency::EUR)
+        );
+
+        // when
+        $contract->calculateInstallmentFor(LeaseTerm::ofMonths(48), Interest::of(3.7));
+
+        // then
+        $this->assertTrue($contract->isCalculated());
+        $this->assertThat($contract->installment(), $this->equalTo(Amount::of(897.80, Currency::EUR)));
+    }
+
+    /**
+     * @test
+     */
+    public function givenANewContract_whenSign_thenContractIsSigned(): void
     {
         // given
         $contract = new Contract(

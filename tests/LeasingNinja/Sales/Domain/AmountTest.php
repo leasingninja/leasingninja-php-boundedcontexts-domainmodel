@@ -8,7 +8,10 @@ use PHPUnit\Framework\TestCase;
 
 class AmountTest extends TestCase
 {
-    public function testGivenTwoEqualAmounts_whenEquals_thenAreEqual(): void
+    /**
+     * @test
+     */
+    public function givenTwoEqualAmounts_whenEquals_thenAreEqual(): void
     {
         // given
         $amount1 = Amount::of(100, Currency::EUR);
@@ -23,7 +26,10 @@ class AmountTest extends TestCase
         //$this->assertThat($areEqual, $this->isTrue());
     }
 
-    public function testGivenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
+    /**
+     * @test
+     */
+    public function givenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
     {
         // given
         $amount1 = Amount::of(100, Currency::EUR);

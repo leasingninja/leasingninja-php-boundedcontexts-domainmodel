@@ -8,11 +8,15 @@ use PHPUnit\Framework\TestCase;
 
 class ContractNumberTest extends TestCase
 {
-    public function test_givenANewContract_whenSign_thenContractIsSigned(): void
+    /**
+     * @test
+     */
+    public function givenNothing_whenNewContractIsCreated_thenContractHasCorrectNumber(): void
     {
         // given
-        $nr = ContractNumber::of("4711");
+
         // when
+        $nr = ContractNumber::of("4711");
 
         // then
         $this->assertThat($nr->value, $this->equalTo("4711"));
