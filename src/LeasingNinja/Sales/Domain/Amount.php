@@ -9,31 +9,53 @@ use PHPMolecules\DDD\Attribute\ValueObject;
 #[ValueObject]
 class Amount
 {
-    public readonly int $amount;
-    public readonly Currency $currency;
+    private readonly int $amountInCents;
+    private readonly Currency $currency;
 
-    private function __construct(int $amount, Currency $currency)
+    private function __construct(int $amountInCents, Currency $currency)
     {
-        $this->amount = $amount;
+        $this->amountInCents = $amountInCents;
         $this->currency = $currency;
     }
 
-    public static function of(int $amount, Currency $currency): Amount
+    public static function of(float $amount, Currency $currency): Amount
     {
         assert($currency != null);
 
-        return new Amount($amount, $currency);
+		return Amount::ofCents(intval(round($amount * 100)), $currency);
     }
+
+	public static function ofCents(int $amountInCents, Currency $currency): Amount
+    {
+		assert($currency != null);
+
+		return new Amount($amountInCents, $currency);
+	}
+
+	public function amount(): float
+    {
+		return $this->amountInCents / 100.0;
+	}
+
+	public function amountInCents(): int
+    {
+		return $this->amountInCents;
+	}
+
+	public function currency(): Currency
+    {
+		return $this->currency;
+	}
 
     public function equals(Amount $other): bool
     {
         // TODO: null safety
-        return $this->amount === $other->amount
+        return $this->amountInCents === $other->amountInCents
             && $this->currency === $other->currency;
     }
 
     public function __toString(): string
     {
-        return "Amount [" . $this->currency . " "  . $this->amount . "]";
+        return $this->currency->name . " " . $this->amount();
     }
 }
