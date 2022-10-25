@@ -25,6 +25,6 @@ class LeaseTerm extends TinyType
 
     public function noOfMonths(): int
     {
-        return $this->value;
+        return $this->value();
     }
 }
