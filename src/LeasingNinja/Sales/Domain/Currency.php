@@ -10,6 +10,6 @@ use PHPMolecules\DDD\Attribute\ValueObject;
 enum Currency
 {
     case EUR;
-    case GPB;
+    case GBP;
     case USD;
 }
