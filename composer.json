@@ -21,7 +21,7 @@
     }
   },
   "require": {
-    "php": "^8.1",
+    "php": "^8.2",
     "xmolecules/phpmolecules": "^0.2.0"
   },
   "require-dev": {
