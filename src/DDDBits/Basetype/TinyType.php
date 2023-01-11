@@ -40,6 +40,8 @@ abstract class TinyType
      */
     public function equals(TinyType $other): bool
     {
-        return $this->value === $other->value;
+        return $other != null
+            && gettype($this) === gettype($other)
+            && $this->value === $other->value;
     }
 }
