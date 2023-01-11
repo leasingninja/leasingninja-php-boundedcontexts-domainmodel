@@ -49,8 +49,9 @@ class Amount
 
     public function equals(Amount $other): bool
     {
-        // TODO: null safety
-        return $this->amountInCents === $other->amountInCents
+        return $other != null
+            && $other instanceof Amount
+            && $this->amountInCents === $other->amountInCents
             && $this->currency === $other->currency;
     }
 
