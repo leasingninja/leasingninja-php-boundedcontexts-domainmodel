@@ -9,14 +9,10 @@ use PHPMolecules\DDD\Attribute\ValueObject;
 #[ValueObject]
 class Amount
 {
-    private readonly int $amountInCents;
-    private readonly Currency $currency;
-
-    private function __construct(int $amountInCents, Currency $currency)
-    {
-        $this->amountInCents = $amountInCents;
-        $this->currency = $currency;
-    }
+    private function __construct(
+        private readonly int $amountInCents,
+        private readonly Currency $currency
+    ) {}
 
     public static function of(float $amount, Currency $currency): Amount
     {

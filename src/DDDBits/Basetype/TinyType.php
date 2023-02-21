@@ -10,17 +10,11 @@ namespace DDDBits\Basetype;
 abstract class TinyType
 {
     /**
-     * @var V
-     */
-    private readonly int|float|string|object $value;
-
-    /**
      * @param V $value
      */
-    protected function __construct($value)
-    {
-        $this->value = $value;
-    }
+    protected function __construct(
+        private readonly int|float|string|object $value
+    ) {}
 
     /**
      * @return V
