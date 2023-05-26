@@ -13,17 +13,15 @@ use PHPMolecules\DDD\Attribute\Identity;
 #[Entity]
 class Contract extends \DDDBits\Basetype\Entity
 {
-    public readonly Customer $lessee;
-    public readonly Car $car;
-    public readonly Amount $price;
     private SignDate $signDate;
 
-    public function __construct(ContractNumber $number, Customer $lessee, Car $car, Amount $price)
+    public function __construct(
+        ContractNumber $number,
+        public readonly Customer $lessee,
+        public readonly Car $car,
+        public readonly Amount $price)
     {
         parent::__construct($number);
-        $this->lessee = $lessee;
-        $this->car = $car;
-        $this->price = $price;
     }
 
     #[Identity]
