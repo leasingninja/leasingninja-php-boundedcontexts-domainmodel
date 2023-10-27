@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace DDDBits\Basetype;
 
+use Stringable;
+
 /**
- * @template ID of int|float|string|object
+ * @template ID of int|float|string|Stringable
  */
 abstract class Entity
 {
     /**
      * @var ID
      */
-    public readonly int|float|string|object $identity;
+    public readonly int|float|string|Stringable $identity;
 
     /**
      * @param ID $identity

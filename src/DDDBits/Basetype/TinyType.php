@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace DDDBits\Basetype;
 
+use Stringable;
+
 /**
- * @template V of int|float|string|object
+ * @template V of int|float|string|Stringable
  */
 abstract class TinyType
 {
@@ -13,13 +15,13 @@ abstract class TinyType
      * @param V $value
      */
     protected function __construct(
-        private readonly int|float|string|object $value
+        private readonly int|float|string|Stringable $value
     ) {}
 
     /**
      * @return V
      */
-    public function value(): int|float|string|object
+    public function value(): int|float|string|Stringable
     {
         return $this->value;
     }
