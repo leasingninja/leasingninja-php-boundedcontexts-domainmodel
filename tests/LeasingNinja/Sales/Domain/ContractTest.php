@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace LeasingNinja\Sales\Domain;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 final class ContractTest extends TestCase
 {
-    //#[Test]
-    /**
-     * @Test
-     */
+    #[Test]
     public function givenAFilledOutContract_whenCalculate_thenInstallmentIsX(): void
     {
         // given
@@ -30,9 +28,7 @@ final class ContractTest extends TestCase
         $this->assertThat($contract->installment(), $this->equalTo(Amount::of(897.80, Currency::EUR)));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function givenANewContract_whenSign_thenContractIsSigned(): void
     {
         // given

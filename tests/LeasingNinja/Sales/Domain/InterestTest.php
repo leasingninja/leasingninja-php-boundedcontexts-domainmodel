@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace LeasingNinja\Sales\Domain;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class InterestTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function givenAnInterest_whenPerMonth_thenCorrectValue(): void
     {
         // given

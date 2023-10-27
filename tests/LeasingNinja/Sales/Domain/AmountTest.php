@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace LeasingNinja\Sales\Domain;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class AmountTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function givenTwoEqualAmounts_whenEquals_thenAreEqual(): void
     {
         // given
@@ -26,9 +25,7 @@ class AmountTest extends TestCase
         //$this->assertThat($areEqual, $this->isTrue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function givenTwoUnequalAmounts_whenEquals_thenAreNotEqual(): void
     {
         // given
@@ -42,9 +39,7 @@ class AmountTest extends TestCase
         $this->assertFalse($areEqual);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function givenTwoAmountsWithUnequalCurrencies_whenEquals_thenAreNotEqual():void
     {
         // given
@@ -58,9 +53,7 @@ class AmountTest extends TestCase
         $this->assertFalse($areEqual);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function givenTwoAmountsWithRoundingAfterThePoint_whenEquals_thenAreEqual(): void
     {
         // given
@@ -74,9 +67,7 @@ class AmountTest extends TestCase
         $this->assertTrue($areEqual);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function givenAnAmountsWithCents_whenToString_thenAfterThePointIsCorrectlyPrinted(): void
     {
         // given
@@ -89,9 +80,7 @@ class AmountTest extends TestCase
         $this->assertThat($amountString, $this->equalTo("EUR 100.45"));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function givenTwoAmountsOfEurosAndCents_whenEquals_thenAreEqual(): void
     {
         // given

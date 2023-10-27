@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace LeasingNinja\Sales\Domain;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class LeaseTermTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function givenNothing_whenALeaseTermIsCreatedOfYears_thenNoOfMonthsIsCorrect(): void
     {
         // given

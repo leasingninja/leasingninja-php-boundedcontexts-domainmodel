@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace LeasingNinja\Sales\Domain;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ContractNumberTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function givenNothing_whenNewContractIsCreated_thenContractHasCorrectNumber(): void
     {
         // given
