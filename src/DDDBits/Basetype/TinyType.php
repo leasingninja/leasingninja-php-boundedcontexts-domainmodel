@@ -9,7 +9,7 @@ use Stringable;
 /**
  * @template V of int|float|string|Stringable
  */
-abstract class TinyType
+abstract readonly class TinyType
 {
     /**
      * @param V $value
@@ -26,6 +26,7 @@ abstract class TinyType
         return $this->value;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return TinyType::class . " [" . $this->value . "]";

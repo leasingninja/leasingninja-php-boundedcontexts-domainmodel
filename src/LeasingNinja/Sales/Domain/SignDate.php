@@ -9,10 +9,10 @@ use DateTimeImmutable;
 use PHPMolecules\DDD\Attribute\ValueObject;
 
 #[ValueObject]
-class SignDate
+readonly class SignDate
 {
     public function __construct(
-        private readonly DateTimeImmutable $dateTime
+        private DateTimeImmutable $dateTime
     ) {}
 
     public static function of(int $year, int $month, int $day): SignDate

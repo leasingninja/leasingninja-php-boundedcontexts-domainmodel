@@ -11,7 +11,7 @@ use PHPMolecules\DDD\Attribute\ValueObject;
  * @extends TinyType<int>
  */
 #[ValueObject]
-class LeaseTerm extends TinyType
+readonly class LeaseTerm extends TinyType
 {
     public static function ofMonths(int $noOfMonths): LeaseTerm
     {

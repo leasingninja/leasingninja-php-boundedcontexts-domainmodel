@@ -11,7 +11,7 @@ use PHPMolecules\DDD\Attribute\ValueObject;
  * @extends TinyType<float>
  */
 #[ValueObject]
-class Interest extends TinyType
+readonly class Interest extends TinyType
 {
     public static function of(float $perYear): Interest
     {

@@ -7,11 +7,11 @@ namespace LeasingNinja\Sales\Domain;
 use PHPMolecules\DDD\Attribute\ValueObject;
 
 #[ValueObject]
-class Amount
+readonly class Amount
 {
     private function __construct(
-        private readonly int $amountInCents,
-        private readonly Currency $currency
+        private int      $amountInCents,
+        private Currency $currency
     ) {}
 
     public static function of(float $amount, Currency $currency): Amount

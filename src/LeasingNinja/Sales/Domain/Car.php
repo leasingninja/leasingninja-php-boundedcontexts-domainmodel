@@ -11,7 +11,7 @@ use PHPMolecules\DDD\Attribute\ValueObject;
  * @extends TinyType<string>
  */
 #[ValueObject]
-class Car extends TinyType
+readonly class Car extends TinyType
 {
     public static function of(string $model): Car
     {

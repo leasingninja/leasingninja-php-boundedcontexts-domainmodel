@@ -11,7 +11,7 @@ use PHPMolecules\DDD\Attribute\ValueObject;
  * @extends TinyType<string>
  */
 #[ValueObject]
-class ContractNumber extends TinyType
+readonly class ContractNumber extends TinyType
 {
     private function __construct(string $number)
     {
