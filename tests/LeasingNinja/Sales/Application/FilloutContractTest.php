@@ -24,8 +24,8 @@ final class FilloutContractTest extends TestCase
 	private Contracts $contractsMock;
 
 	@InjectMocks
-    */
     private FilloutContract $filloutContractUnderTest;
+    */
 
     #[Test]
 	function givenEmptyContract_WhenFillout_ThenSave(): void
