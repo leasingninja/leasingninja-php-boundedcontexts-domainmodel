@@ -16,15 +16,11 @@ readonly class Amount
 
     public static function of(float $amount, Currency $currency): Amount
     {
-        assert($currency != null);
-
 		return Amount::ofCents(intval(round($amount * 100)), $currency);
     }
 
 	public static function ofCents(int $amountInCents, Currency $currency): Amount
     {
-		assert($currency != null);
-
 		return new Amount($amountInCents, $currency);
 	}
 
