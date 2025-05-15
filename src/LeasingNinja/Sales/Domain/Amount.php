@@ -43,7 +43,7 @@ readonly class Amount
 		return $this->currency;
 	}
 
-    public function equals(Amount $other): bool
+    public function equals(object $other): bool
     {
         return $other != null
             && $other instanceof Amount
