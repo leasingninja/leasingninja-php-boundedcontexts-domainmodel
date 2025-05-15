@@ -33,6 +33,8 @@ class Contract extends \DDDBits\Basetype\Entity
         public readonly Amount $price)
     {
         parent::__construct($number);
+        assert(!$this->isCalculated());
+        assert(!$this->isSigned());
     }
 
     #[Identity]
