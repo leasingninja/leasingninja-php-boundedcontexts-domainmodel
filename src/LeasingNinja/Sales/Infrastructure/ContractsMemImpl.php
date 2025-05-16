@@ -11,7 +11,12 @@ use LeasingNinja\Sales\Domain\Contracts;
 final class ContractsMemImpl implements Contracts
 {
     /** @var array<string, Contract> */
-    private array $repo = [];
+    private array $repo;
+
+    public function __construct()
+    {
+        $this->repo = [];
+    }
 
     public function save(Contract $contract): void
     {
