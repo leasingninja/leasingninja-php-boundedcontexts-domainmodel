@@ -91,6 +91,7 @@ class Contract extends \DDDBits\Basetype\Entity
     {
         assert($date != null);
         assert(!$this->isSigned());
+        assert($this->isCalculated());
 
         $this->signDate = $date;
 
