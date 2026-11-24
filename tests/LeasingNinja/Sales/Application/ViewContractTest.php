@@ -37,7 +37,8 @@ final class ViewContractTest extends TestCase
         $viewContractUnderTest = new ViewContract($contractsMock);
 
         // Given
-        $contractsMock->method('with')
+        $contractsMock->expects($this->once())
+            ->method('with')
             ->with(ContractNumber::of("4711"))
             ->willReturn(
                 new Contract(
