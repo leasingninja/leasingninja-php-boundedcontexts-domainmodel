@@ -29,7 +29,7 @@ final class ContractTest extends TestCase
     }
 
     #[Test]
-    public function givenANewContract_whenSign_thenContractIsSigned(): void
+    public function givenACalculatedContract_whenSign_thenContractIsSigned(): void
     {
         // given
         $contract = new Contract(
@@ -38,6 +38,7 @@ final class ContractTest extends TestCase
             Car::of("Mercedes Benz C-Class"),
             Amount::of(20_000, Currency::EUR)
         );
+        $contract->calculateInstallmentFor(LeaseTerm::ofMonths(48), Interest::of(3.7));
 
         // when
         $contract->sign(SignDate::of(2018, 12, 24));
